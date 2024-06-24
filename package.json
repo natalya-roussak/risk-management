@@ -13,10 +13,12 @@
     "express": "^4"
   },
   "devDependencies": {
-    "@cap-js/sqlite": "^1.7.1"
+    "@cap-js/sqlite": "^1.7.1",
+    "@sap/ux-specification": "^1.120.13"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "watch-risk-management": "cds watch --open risk-management/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "requires": {
@@ -26,9 +28,14 @@
       },
       "db": {
         "kind": "sqlite",
-        "credentials": { "url": "db.sqlite" },
+        "credentials": {
+          "url": "db.sqlite"
+        },
         "schema_evolution": "auto"
-     }
+      }
     }
-  }
+  },
+  "sapux": [
+    "app/risk-management"
+  ]
 }
