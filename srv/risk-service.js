@@ -8,7 +8,7 @@ module.exports = cds.service.impl(async function () {
         return await SELECT.from(Items).where({ quantity });
     });
 
-    this.before("createItem", (req) => {
+    this.before(["CREATE", "createItem"], (req) => {
         const { quantity } = req.data;
         if (quantity > 100) {
             return req.error(409, `Item quantity cannot be more than 100.`);
