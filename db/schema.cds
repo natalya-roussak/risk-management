@@ -35,3 +35,9 @@ entity Priority : CodeList {
                     low    = 'L';
             };
 }
+
+entity Items : cuid {
+        title : String;
+        descr: String;
+        quantity : Integer;
+}

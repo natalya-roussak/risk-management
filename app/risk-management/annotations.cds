@@ -28,6 +28,16 @@ annotate service.Risks with @(
                 Label : 'impact',
                 Value : impact,
             },
+            {
+                $Type : 'UI.DataField',
+                Label : 'criticality',
+                Value : criticality,
+            },
+            {
+                $Type : 'UI.DataField',
+                Label : 'PrioCriticality',
+                Value : PrioCriticality,
+            },
         ],
     },
     UI.Facets : [
@@ -45,13 +55,13 @@ annotate service.Risks with @(
         },
         {
             $Type : 'UI.CollectionFacet',
-            Label : 'Mitigation',
-            ID : 'MitigationDetails',
+            Label : 'Mitigation Overview',
+            ID : 'MitigationOverview',
             Facets : [
                 {
                     $Type : 'UI.ReferenceFacet',
                     Label : 'Mitigation Details',
-                    ID : 'MitigationDetails1',
+                    ID : 'MitigationDetails',
                     Target : '@UI.FieldGroup#MitigationDetails',
                 },],
         },],
@@ -75,11 +85,13 @@ annotate service.Risks with @(
             $Type : 'UI.DataField',
             Label : 'Priority',
             Value : prio_code,
+            Criticality : PrioCriticality,
         },
         {
             $Type : 'UI.DataField',
             Label : '{i18n>Impact}',
             Value : impact,
+            Criticality : criticality,
         },
     ],
 );
@@ -107,7 +119,7 @@ annotate service.Risks with {
                 ValueListProperty : 'timeline',
             },
         ],
-        Label : 'Mitigation',
+        Label : '{i18n>Mitigation}',
     }
 };
 
@@ -140,10 +152,6 @@ annotate service.Risks with @(
         Data : [
             {
                 $Type : 'UI.DataField',
-                Value : descr,
-                Label : '{i18n>Description}',
-            },{
-                $Type : 'UI.DataField',
                 Value : owner,
                 Label : '{i18n>Owner}',
             },{
@@ -152,12 +160,18 @@ annotate service.Risks with @(
                 Label : '{i18n>Title}',
             },{
                 $Type : 'UI.DataField',
+                Value : descr,
+                Label : '{i18n>Description}',
+            },{
+                $Type : 'UI.DataField',
                 Value : prio_code,
-            },
-            {
+                Label : '{i18n>Priority}',
+                Criticality : PrioCriticality,
+            },{
                 $Type : 'UI.DataField',
                 Value : impact,
                 Label : '{i18n>Impact}',
+                Criticality : criticality,
             },],
     }
 );
@@ -169,8 +183,7 @@ annotate service.Risks with @(
                 $Type : 'UI.DataField',
                 Value : miti_ID,
                 Label : '{i18n>Mitigation}',
-            },
-            {
+            },{
                 $Type : 'UI.DataField',
                 Value : miti.owner,
                 Label : '{i18n>Owner}',
@@ -181,9 +194,6 @@ annotate service.Risks with @(
             },],
     }
 );
-annotate service.Mitigations with {
-    ID @Common.Text : descr
-};
 annotate service.Risks with {
     miti @Common.Text : {
             $value : miti.descr,
@@ -192,6 +202,9 @@ annotate service.Risks with {
 };
 annotate service.Risks with {
     miti @Common.ValueListWithFixedValues : true
+};
+annotate service.Mitigations with {
+    ID @Common.Text : descr
 };
 annotate service.Mitigations with {
     owner @Common.FieldControl : #ReadOnly

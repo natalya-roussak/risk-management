@@ -1,7 +1,7 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Mon Jun 24 2024 12:23:21 GMT+0000 (Coordinated Universal Time)|
+|**Generation Date and Time**<br>Thu Jun 27 2024 08:00:27 GMT+0000 (Coordinated Universal Time)|
 |**App Generator**<br>@sap/generator-fiori-elements|
 |**App Generator Version**<br>1.14.0|
 |**Generation Platform**<br>SAP Business Application Studio|
@@ -20,7 +20,7 @@
 
 ## risk-management
 
-Risk Management application.
+An SAP Fiori application.
 
 ### Starting the generated app
 
