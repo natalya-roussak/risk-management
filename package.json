@@ -24,7 +24,24 @@
     "requires": {
       "API_BUSINESS_PARTNER": {
         "kind": "odata-v2",
-        "model": "srv/external/API_BUSINESS_PARTNER"
+        "model": "srv/external/API_BUSINESS_PARTNER",
+        "credentials": {
+          "destination": "BusinessPartners",
+          "path": "/sap/opu/odata/sap/API_BUSINESS_PARTNER"
+        }
+      },
+      "LOCAL_APP": {
+        "kind": "odata",
+        "credentials": {
+          "destination": "LocalApp"
+        }
+      },
+      "Northwind": {
+        "kind": "odata",
+        "credentials": {
+          "destination": "Northwind",
+          "path": "/Northwind/Northwind.svc/"
+        }
       },
       "db": {
         "kind": "sqlite",

@@ -1,6 +1,6 @@
 {
  "meta": {
-  "creator": "cds-dk 7.0.2"
+  "creator": "cds-dk 7.9.4"
  },
  "$version": "2.0",
  "definitions": {
@@ -344,6 +344,395 @@
      "@sap.display.format": "NonNegative",
      "@sap.label": "Check digit",
      "@sap.quickinfo": "Check digit for the international location number"
+    }
+   }
+  },
+  "API_BUSINESS_PARTNER.A_BPAddressIndependentEmail": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.content.version": "1",
+   "@sap.label": "Address Independent Email Address",
+   "elements": {
+    "BusinessPartner": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Business Partner",
+     "@sap.quickinfo": "Business Partner Number",
+     "notNull": true
+    },
+    "AddressID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Address Number",
+     "notNull": true
+    },
+    "Person": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Person Number",
+     "notNull": true
+    },
+    "OrdinalNumber": {
+     "key": true,
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Sequence Number",
+     "notNull": true
+    },
+    "EmailAddress": {
+     "type": "cds.String",
+     "length": 241,
+     "@sap.label": "Email Address"
+    },
+    "IsDefaultEmailAddress": {
+     "type": "cds.Boolean",
+     "@sap.label": "Email is Cur Dflt",
+     "@sap.quickinfo": "Indicator : Current Default Email Address"
+    },
+    "ValidityStartDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date"
+    },
+    "ValidityEndDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date"
+    }
+   }
+  },
+  "API_BUSINESS_PARTNER.A_BPAddressIndependentFax": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.content.version": "1",
+   "@sap.label": "Address Independent Fax Number",
+   "elements": {
+    "BusinessPartner": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Business Partner",
+     "@sap.quickinfo": "Business Partner Number",
+     "notNull": true
+    },
+    "AddressID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Address Number",
+     "notNull": true
+    },
+    "Person": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Person Number",
+     "notNull": true
+    },
+    "OrdinalNumber": {
+     "key": true,
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Sequence Number",
+     "notNull": true
+    },
+    "FaxCountry": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Country/Region",
+     "@sap.quickinfo": "Country/Region for Telephone/Fax Number"
+    },
+    "FaxAreaCodeSubscriberNumber": {
+     "type": "cds.String",
+     "length": 30,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Fax",
+     "@sap.quickinfo": "Fax Number: Dialing Code and Number"
+    },
+    "FaxNumberExtension": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Extension",
+     "@sap.quickinfo": "Fax no.: Extension"
+    },
+    "InternationalFaxNumber": {
+     "type": "cds.String",
+     "length": 30,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Fax Number",
+     "@sap.quickinfo": "Complete Number: Dialing Code+Number+Extension",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    },
+    "IsDefaultFaxNumber": {
+     "type": "cds.Boolean",
+     "@sap.label": "Fax is Cur Dflt",
+     "@sap.quickinfo": "Indicator : Current Default Fax Number"
+    },
+    "ValidityEndDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date"
+    },
+    "ValidityStartDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date"
+    }
+   }
+  },
+  "API_BUSINESS_PARTNER.A_BPAddressIndependentMobile": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.content.version": "1",
+   "@sap.label": "Address Independent Mobile Number",
+   "elements": {
+    "BusinessPartner": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Business Partner",
+     "@sap.quickinfo": "Business Partner Number",
+     "notNull": true
+    },
+    "AddressID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Address Number",
+     "notNull": true
+    },
+    "Person": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Person Number",
+     "notNull": true
+    },
+    "OrdinalNumber": {
+     "key": true,
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Sequence Number",
+     "notNull": true
+    },
+    "InternationalPhoneNumber": {
+     "type": "cds.String",
+     "length": 30,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Telephone Number",
+     "@sap.quickinfo": "Complete Number: Dialing Code+Number+Extension",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    },
+    "IsDefaultPhoneNumber": {
+     "type": "cds.Boolean",
+     "@sap.label": "TRUE",
+     "@sap.quickinfo": "Data element for domain BOOLE: TRUE (='X') and FALSE (=' ')"
+    },
+    "MobilePhoneCountry": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Country/Region",
+     "@sap.quickinfo": "Country/Region for Telephone/Fax Number"
+    },
+    "MobilePhoneNumber": {
+     "type": "cds.String",
+     "length": 30,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Telephone",
+     "@sap.quickinfo": "Telephone No.: Dialing Code and Number"
+    },
+    "PhoneNumberExtension": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Extension",
+     "@sap.quickinfo": "Telephone no.: Extension"
+    },
+    "PhoneNumberType": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Phone number type",
+     "@sap.quickinfo": "Phone Number Type",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    },
+    "ValidityStartDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date"
+    },
+    "ValidityEndDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date"
+    }
+   }
+  },
+  "API_BUSINESS_PARTNER.A_BPAddressIndependentPhone": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.content.version": "1",
+   "@sap.label": "Address Independent Phone Number",
+   "elements": {
+    "BusinessPartner": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Business Partner",
+     "@sap.quickinfo": "Business Partner Number",
+     "notNull": true
+    },
+    "AddressID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Address Number",
+     "notNull": true
+    },
+    "Person": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Person Number",
+     "notNull": true
+    },
+    "OrdinalNumber": {
+     "key": true,
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Sequence Number",
+     "notNull": true
+    },
+    "DestinationLocationCountry": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Country/Region",
+     "@sap.quickinfo": "Country/Region for Telephone/Fax Number"
+    },
+    "InternationalPhoneNumber": {
+     "type": "cds.String",
+     "length": 30,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Telephone Number",
+     "@sap.quickinfo": "Complete Number: Dialing Code+Number+Extension",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    },
+    "IsDefaultPhoneNumber": {
+     "type": "cds.Boolean",
+     "@sap.label": "TRUE",
+     "@sap.quickinfo": "Data element for domain BOOLE: TRUE (='X') and FALSE (=' ')"
+    },
+    "PhoneNumber": {
+     "type": "cds.String",
+     "length": 30,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Telephone",
+     "@sap.quickinfo": "Telephone No.: Dialing Code and Number"
+    },
+    "PhoneNumberExtension": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Extension",
+     "@sap.quickinfo": "Telephone no.: Extension"
+    },
+    "PhoneNumberType": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Phone number type",
+     "@sap.quickinfo": "Phone Number Type",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    },
+    "ValidityStartDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date"
+    },
+    "ValidityEndDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date"
+    }
+   }
+  },
+  "API_BUSINESS_PARTNER.A_BPAddressIndependentWebsite": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.content.version": "1",
+   "@sap.label": "Address Independent Website",
+   "elements": {
+    "BusinessPartner": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Business Partner",
+     "@sap.quickinfo": "Business Partner Number",
+     "notNull": true
+    },
+    "AddressID": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Address Number",
+     "notNull": true
+    },
+    "Person": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Person Number",
+     "notNull": true
+    },
+    "OrdinalNumber": {
+     "key": true,
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Sequence Number",
+     "notNull": true
+    },
+    "IsDefaultURLAddress": {
+     "type": "cds.Boolean",
+     "@sap.label": "Standard addr.",
+     "@sap.quickinfo": "Flag: this address is the default address"
+    },
+    "URLFieldLength": {
+     "type": "cds.Integer",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
+    },
+    "WebsiteURL": {
+     "type": "cds.String",
+     "length": 2048
     }
    }
   },
@@ -1106,6 +1495,61 @@
      "@sap.quickinfo": "Business Purpose Completed Flag",
      "@sap.creatable": "false",
      "@sap.updatable": "false"
+    }
+   }
+  },
+  "API_BUSINESS_PARTNER.A_BPEmployment": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.content.version": "1",
+   "@sap.label": "Employment Overview",
+   "elements": {
+    "BusinessPartner": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Business Partner",
+     "@sap.quickinfo": "Business Partner Number",
+     "notNull": true
+    },
+    "BPEmploymentStartDate": {
+     "key": true,
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Employed from",
+     "notNull": true
+    },
+    "BPEmploymentEndDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Employed Until"
+    },
+    "BPEmploymentStatus": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Employment Status"
+    },
+    "BusPartEmplrIndstryCode": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Industry"
+    },
+    "BusinessPartnerEmployerName": {
+     "type": "cds.String",
+     "length": 35,
+     "@sap.label": "Employer",
+     "@sap.quickinfo": "Name of Employer of a Natural Person"
+    },
+    "BusinessPartnerOccupationGroup": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Occupation",
+     "@sap.quickinfo": "Occupation/group"
     }
    }
   },
@@ -2528,7 +2972,7 @@
     "CorrespondenceLanguage": {
      "type": "cds.String",
      "length": 2,
-     "@sap.label": "Correspondence lang.",
+     "@sap.label": "Correspondence Lang.",
      "@sap.quickinfo": "Business Partner: Correspondence Language"
     },
     "CreatedByUser": {
@@ -2910,6 +3354,51 @@
      "@sap.label": "Trading Partner No.",
      "@sap.quickinfo": "Company ID of Trading Partner"
     },
+    "to_AddressIndependentEmail": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "API_BUSINESS_PARTNER.A_BPAddressIndependentEmail",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    },
+    "to_AddressIndependentFax": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "API_BUSINESS_PARTNER.A_BPAddressIndependentFax",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    },
+    "to_AddressIndependentMobile": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "API_BUSINESS_PARTNER.A_BPAddressIndependentMobile",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    },
+    "to_AddressIndependentPhone": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "API_BUSINESS_PARTNER.A_BPAddressIndependentPhone",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    },
+    "to_AddressIndependentWebsite": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "API_BUSINESS_PARTNER.A_BPAddressIndependentWebsite",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    },
     "to_BPCreditWorthiness": {
      "@cds.ambiguous": "missing on condition?",
      "type": "cds.Association",
@@ -2920,6 +3409,15 @@
      "@cds.ambiguous": "missing on condition?",
      "type": "cds.Association",
      "target": "API_BUSINESS_PARTNER.A_BPDataController",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    },
+    "to_BPEmployment": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "API_BUSINESS_PARTNER.A_BPEmployment",
      "cardinality": {
       "max": "*"
      },
@@ -2982,6 +3480,15 @@
      },
      "keys": []
     },
+    "to_BusinessPartnerAlias": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "API_BUSINESS_PARTNER.A_BusinessPartnerAlias",
+     "cardinality": {
+      "max": "*"
+     },
+     "keys": []
+    },
     "to_BusinessPartnerBank": {
      "@cds.ambiguous": "missing on condition?",
      "type": "cds.Association",
@@ -2998,6 +3505,12 @@
      "cardinality": {
       "max": "*"
      },
+     "keys": []
+    },
+    "to_BusinessPartnerIsBank": {
+     "@cds.ambiguous": "missing on condition?",
+     "type": "cds.Association",
+     "target": "API_BUSINESS_PARTNER.A_BusinessPartnerIsBank",
      "keys": []
     },
     "to_BusinessPartnerRating": {
@@ -3415,6 +3928,39 @@
     }
    }
   },
+  "API_BUSINESS_PARTNER.A_BusinessPartnerAlias": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.content.version": "1",
+   "@sap.label": "Additional Names",
+   "elements": {
+    "BusinessPartner": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Business Partner",
+     "@sap.quickinfo": "Business Partner Number",
+     "notNull": true
+    },
+    "BPAliasPositionNumber": {
+     "key": true,
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Item: Alias",
+     "@sap.quickinfo": "Items with Business Partner Name/Alias",
+     "notNull": true
+    },
+    "BusinessPartnerAliasName": {
+     "type": "cds.String",
+     "length": 80,
+     "@sap.label": "Alias",
+     "@sap.quickinfo": "Business Partner Alias"
+    }
+   }
+  },
   "API_BUSINESS_PARTNER.A_BusinessPartnerBank": {
    "kind": "entity",
    "@cds.external": true,
@@ -3623,6 +4169,46 @@
     }
    }
   },
+  "API_BUSINESS_PARTNER.A_BusinessPartnerIsBank": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Partner is Bank",
+   "elements": {
+    "BusinessPartner": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Business Partner",
+     "@sap.quickinfo": "Business Partner Number",
+     "notNull": true
+    },
+    "BankKey": {
+     "type": "cds.String",
+     "length": 15,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Bank Key",
+     "@sap.quickinfo": "Bank Keys"
+    },
+    "BankCountry": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Bank Country/Region",
+     "@sap.quickinfo": "Bank Country/Region Key"
+    },
+    "BPMinimumReserve": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Minimum Reserve Req.",
+     "@sap.quickinfo": "Minimum Reserve Requirement for Bank"
+    }
+   }
+  },
   "API_BUSINESS_PARTNER.A_BusinessPartnerPaymentCard": {
    "kind": "entity",
    "@cds.external": true,
@@ -3800,6 +4386,12 @@
      "type": "cds.Boolean",
      "@sap.label": "Rating is Expired",
      "@sap.quickinfo": "Rating Validity is Expired according to Permitted Period"
+    },
+    "BPRatingLongComment": {
+     "type": "cds.String",
+     "length": 255,
+     "@sap.label": "Longtext Rating",
+     "@sap.quickinfo": "Longtext for Rating"
     }
    }
   },
@@ -4062,7 +4654,7 @@
      "length": 2,
      "@sap.display.format": "UpperCase",
      "@sap.label": "Billing Block",
-     "@sap.quickinfo": "Central Billing Block for Customer"
+     "@sap.quickinfo": "Central billing block for customer"
     },
     "CreatedByUser": {
      "type": "cds.String",
@@ -4199,7 +4791,9 @@
      "type": "cds.String",
      "length": 1,
      "@sap.display.format": "UpperCase",
-     "@sap.label": "Natural Person"
+     "@sap.label": "Natural Person",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
     },
     "OrderIsBlockedForCustomer": {
      "type": "cds.String",
@@ -4369,7 +4963,9 @@
      "length": 20,
      "@sap.display.format": "UpperCase",
      "@sap.label": "VAT Registration No.",
-     "@sap.quickinfo": "VAT Registration Number"
+     "@sap.quickinfo": "VAT Registration Number",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
     },
     "DeletionIndicator": {
      "type": "cds.Boolean",
@@ -4509,8 +5105,8 @@
      "type": "cds.String",
      "length": 12,
      "@sap.display.format": "UpperCase",
-     "@sap.label": "Account at customer",
-     "@sap.quickinfo": "Our account number at customer"
+     "@sap.label": "Account at Customer",
+     "@sap.quickinfo": "Our Account Number at Customer"
     },
     "AccountingClerk": {
      "type": "cds.String",
@@ -4922,7 +5518,7 @@
      "type": "cds.String",
      "length": 12,
      "@sap.display.format": "UpperCase",
-     "@sap.label": "Account at customer",
+     "@sap.label": "Account at Customer",
      "@sap.quickinfo": "Shipper's (Our) Account Number at the Customer or Vendor"
     },
     "AuthorizationGroup": {
@@ -5362,7 +5958,7 @@
      "length": 1,
      "@sap.display.format": "UpperCase",
      "@sap.label": "Tax Classification",
-     "@sap.quickinfo": "Tax classification for customer"
+     "@sap.quickinfo": "Tax Classification for Customer"
     },
     "to_SlsAreaAddrDepdntTax": {
      "@cds.ambiguous": "missing on condition?",
@@ -5491,8 +6087,8 @@
     "CustTaxGroupExemptionEndDate": {
      "type": "cds.Date",
      "@sap.display.format": "Date",
-     "@sap.label": "Exempted until",
-     "@sap.quickinfo": "End date of exemption"
+     "@sap.label": "Exempted Until",
+     "@sap.quickinfo": "Date on which exemption ends"
     },
     "CustTaxGroupSubjectedStartDate": {
      "type": "cds.Date",
@@ -5701,7 +6297,7 @@
     "SaturdayMorningClosingTime": {
      "type": "cds.Time",
      "@sap.label": "Saturday",
-     "@sap.quickinfo": "Goods receiving hours: Saturday morning from ..."
+     "@sap.quickinfo": "Goods receiving hours: Saturday morning until ..."
     },
     "SaturdayAfternoonOpeningTime": {
      "type": "cds.Time",
@@ -6140,7 +6736,7 @@
      "length": 1,
      "@sap.display.format": "UpperCase",
      "@sap.label": "Tax Classification",
-     "@sap.quickinfo": "Tax classification for customer"
+     "@sap.quickinfo": "Tax Classification for Customer"
     }
    }
   },
@@ -6303,7 +6899,7 @@
     "SaturdayMorningClosingTime": {
      "type": "cds.Time",
      "@sap.label": "Saturday",
-     "@sap.quickinfo": "Goods receiving hours: Saturday morning from ..."
+     "@sap.quickinfo": "Goods receiving hours: Saturday morning until ..."
     },
     "SaturdayAfternoonOpeningTime": {
      "type": "cds.Time",
@@ -6368,6 +6964,13 @@
      "@sap.display.format": "UpperCase",
      "@sap.label": "Authorization",
      "@sap.quickinfo": "Authorization Group"
+    },
+    "BusinessPartnerPanNumber": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "PAN",
+     "@sap.quickinfo": "Permanent Account Number"
     },
     "CreatedByUser": {
      "type": "cds.String",
@@ -6436,7 +7039,9 @@
      "length": 20,
      "@sap.display.format": "UpperCase",
      "@sap.label": "VAT Registration No.",
-     "@sap.quickinfo": "VAT Registration Number"
+     "@sap.quickinfo": "VAT Registration Number",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
     },
     "BirthDate": {
      "type": "cds.Date",
@@ -6504,7 +7109,9 @@
      "type": "cds.String",
      "length": 1,
      "@sap.display.format": "UpperCase",
-     "@sap.label": "Natural Person"
+     "@sap.label": "Natural Person",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false"
     },
     "PaymentReason": {
      "type": "cds.String",
@@ -7148,7 +7755,7 @@
      "type": "cds.Date",
      "@sap.display.format": "Date",
      "@sap.label": "Created On",
-     "@sap.quickinfo": "Record Created On",
+     "@sap.quickinfo": "Record Creation Date",
      "@sap.creatable": "false",
      "@sap.updatable": "false"
     },

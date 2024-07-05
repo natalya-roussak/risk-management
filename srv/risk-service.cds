@@ -2,10 +2,10 @@ using {riskmanagement as rm} from '../db/schema';
 
 @path: 'service/risk'
 service RiskService {
-    entity Risks       as projection on rm.Risks;
+    entity Risks            as projection on rm.Risks;
     annotate Risks with @odata.draft.enabled;
 
-    entity Mitigations as
+    entity Mitigations      as
         projection on rm.Mitigations {
             *,
             risks : redirected to Risks
@@ -14,18 +14,20 @@ service RiskService {
     annotate Mitigations with @odata.draft.enabled;
 
     @readonly
-    entity ListOfRisks as
+    entity ListOfRisks      as
         select from rm.Risks {
             ID,
             title,
             owner
         }
 
-    entity Items as projection on rm.Items;
-
+    entity Items            as projection on rm.Items;
     function getItemsWithQuantity(quantity : Integer) returns array of Items;
-    action createItem(title : String, descr : String, quantity : Integer);
+    action   createItem(title : String, descr : String, quantity : Integer);
 
-// BusinessPartner will be used later
-//@readonly entity BusinessPartners as projection on rm.BusinessPartners;
+    function getString() returns String;
+    function getProductsFromNorthwind() returns array of String;
+
+    @readonly
+    entity BusinessPartners as projection on rm.BusinessPartners;
 }

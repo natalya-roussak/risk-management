@@ -1,5 +1,5 @@
 @hostname=localhost
-@port=36513
+@port=4004
 @host={{hostname}}:{{port}}
 GET http://{{host}}/odata/v4/service/risk/getItemsWithQuantity(quantity=2)
 
@@ -14,3 +14,6 @@ Content-Type: application/json
 }
 
 ###
+GET http://{{host}}/odata/v4/service/risk/getString()
+###
+GET http://{{host}}/odata/v4/service/risk/getProductsFromNorthwind()
