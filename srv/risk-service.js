@@ -79,6 +79,7 @@ module.exports = cds.service.impl(async function () {
        */
         if (!req.query.SELECT.columns) return next();
 
+
         const expandIndex = req.query.SELECT.columns.findIndex(
             ({ expand, ref }) => expand && ref[0] === "bp"
         );
