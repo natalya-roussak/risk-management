@@ -45,7 +45,7 @@ service RiskService @(requires: 'authenticated-user') {
             ID,
             title,
             owner
-        }
+        };
 
     entity Items            as projection on rm.Items;
     function getItemsWithQuantity(quantity : Integer) returns array of Items;

@@ -69,7 +69,7 @@ module.exports = cds.service.impl(async function () {
 
         })
     })
-    
+
     // Risks?$expand=bp (Expand on BusinessPartner)
     this.on("READ", Risks, async (req, next) => {
         /*
@@ -90,8 +90,11 @@ module.exports = cds.service.impl(async function () {
         req.query.SELECT.columns.splice(expandIndex, 1);
 
         // Make sure bp_BusinessPartner (ID) will be returned
-        if (!req.query.SELECT.columns.find((column) =>
-            column.ref.find((ref) => ref == "bp_BusinessPartner")
+        if (!req.query.SELECT.columns.find((column) => {
+            if (column.ref) {
+                column.ref.find((ref) => ref == "bp_BusinessPartner")
+            }
+        }
         )
         ) {
             req.query.SELECT.columns.push({ ref: ["bp_BusinessPartner"] });
