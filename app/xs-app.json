@@ -1,5 +1,9 @@
 {
   "welcomeFile": "app/webapp/index.html",
+  "logout": {
+    "logoutEndpoint": "/auth/logout",
+    "logoutPage": "https://1660cf5etrial-btp-course-risk-management.cfapps.us10-001.hana.ondemand.com/app/webapp/index.html"
+  },
   "routes": [
     {
       "source": "^/app/(.*)$",

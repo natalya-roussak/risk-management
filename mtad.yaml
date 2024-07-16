@@ -1,0 +1,90 @@
+# mbt mtad-gen
+_schema-version: "3.1"
+ID: risk-management
+description: Template for the Learning Journey Building side-by-side extensions on
+  SAP BTP
+version: 3.0.0
+modules:
+- name: risk-management-srv
+  type: javascript.nodejs
+  path: risk-management-srv
+  requires:
+  - name: risk-management-auth
+  - name: risk-management-db
+  - name: risk-management-destination
+  - name: risk-management-connectivity
+  provides:
+  - name: srv-api
+    properties:
+      srv-url: ${default-url}
+  parameters:
+    buildpack: nodejs_buildpack
+- name: risk-management-db-deployer
+  type: com.sap.xs.hdi
+  path: risk-management-db-deployer
+  requires:
+  - name: risk-management-db
+  parameters:
+    buildpack: nodejs_buildpack
+- name: risk-management
+  type: javascript.nodejs
+  path: risk-management
+  requires:
+  - name: srv-api
+    group: destinations
+    properties:
+      forwardAuthToken: true
+      name: srv-api
+      url: ~{srv-url}
+  - name: risk-management-auth
+  parameters:
+    disk-quota: 1024M
+    keep-existing-routes: true
+    memory: 1024M
+resources:
+- name: risk-management-auth
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      oauth2-configuration:
+        redirect-uris:
+        - https://**.hana.ondemand.com/login/callback
+      role-collections:
+      - description: Manage Risks
+        name: RiskManager-${org}-${space}
+        role-template-references:
+        - $XSAPPNAME.RiskManager
+      - description: View Risks
+        name: RiskViewer-${org}-${space}
+        role-template-references:
+        - $XSAPPNAME.RiskViewer
+      tenant-mode: dedicated
+      xsappname: risk-management-${org}-${space}
+    path: ./xs-security.json
+    service: xsuaa
+    service-keys:
+    - name: key
+    service-plan: application
+- name: risk-management-db
+  type: com.sap.xs.hdi-container
+  parameters:
+    service: hana
+    service-plan: hdi-shared
+- name: risk-management-destination
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: destination
+    service-plan: lite
+- name: risk-management-connectivity
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: connectivity
+    service-plan: lite
+parameters:
+  enable-parallel-deployments: true
+build-parameters:
+  before-all:
+  - builder: custom
+    commands:
+    - npm ci
+    - npx cds build --production
